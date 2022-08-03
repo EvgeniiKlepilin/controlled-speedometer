@@ -31,15 +31,21 @@ function resetNeedle() {
 }
 
 function getEstimate() {
-    console.log("getEstimate");
-    const givenRate = parseInt(document.getElementById("givenRate").value);
+    let givenRate = parseInt(document.getElementById("givenRate").value);
     const expectedRate = parseInt(document.getElementById("expectedRate").value);
     const standardDeviation = parseInt(document.getElementById("standardDeviation").value);
 
     const min = expectedRate - standardDeviation; 
     const max = expectedRate + standardDeviation;
-    const targetDegrees = valueToDegrees(givenRate, min, max);
 
+    if (givenRate < min) {
+        givenRate = min;
+    } else if (givenRate > max) {
+        givenRate = max;
+    }
+
+    const targetDegrees = valueToDegrees(givenRate, min, max);
+    
     initializeValues(expectedRate, min, max);
     moveNeedle(targetDegrees);
 }
