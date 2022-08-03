@@ -45,7 +45,7 @@ function getEstimate() {
     }
 
     const targetDegrees = valueToDegrees(givenRate, min, max);
-    
+
     initializeValues(expectedRate, min, max);
     moveNeedle(targetDegrees);
 }
