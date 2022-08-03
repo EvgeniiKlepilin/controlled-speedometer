@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Speedometer</title>
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <div id="container">
+      <span id="averageValue" class="measureValue">Avg</span>
+      <div id="speedometerContainer">
+        <span id="minValue" class="measureValue">Min</span>
+        <img id="speedometer" src="speedometer.png" />
+        <span id="maxValue" class="measureValue">Max</span>
+      </div>
+      <img id="needle" src="needle.png" />
+      <!-- <input type="range" min="0" max="180" value="0" id="slider" class="slider" name="slider"> -->
+      
+      <label for="givenRate">Given Rate:</label>
+      <input type="number" name="givenRate" id="givenRate" />
+      <label for="expectedRate">Expected Rate:</label>
+      <input type="number" name="expectedRate" id="expectedRate" />
+      <label for="standardDeviation">Standard Deviation:</label>
+      <input type="number" name="standardDeviation" id="standardDeviation" />
+      <button onclick="getEstimate()">Get Estimate</button>
+    </div>
+    <script>
+      initializeValues("Avg", "Min", "Max");
+      setTimeout(startSpeedometer, 1000);
+    </script>
+  </body>
+</html>

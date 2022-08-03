@@ -1,0 +1,33 @@
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+}
+
+#needle {
+    transition: .8s;
+    transition-timing-function: ease-in-out;
+    -webkit-transition: .8s;
+    -moz-transition: .8s;
+
+    z-index: -1;
+
+    margin-bottom: -100px;
+}
+
+#speedometerContainer {
+    top: 75px;
+    position: absolute;
+    z-index: -2;
+}
+
+#speedometer {
+    height: auto;
+    width: 500px;
+}
+
+.measureValue {
+    font-weight: bold;
+}
